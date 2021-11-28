@@ -1,3 +1,5 @@
+# Syntax: editorconfig.org
+
 root = true
 
 [*]
@@ -7,6 +9,9 @@ indent_size = 4
 insert_final_newline = true
 end_of_line = lf
 
-[*.{yml, yaml, sublime-syntax, sublime-build, tmPreferences}]
+[*.{yml, yaml, sublime-syntax, sublime-build, sublime-package, tmPreferences}]
 indent_style = space
 indent_size = 2
+
+[*.py]
+indent_style = space
