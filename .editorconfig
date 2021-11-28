@@ -7,6 +7,6 @@ indent_size = 4
 insert_final_newline = true
 end_of_line = lf
 
-[*.{yml, yaml, sublime-syntax, tmLanguage}]
+[*.{yml, yaml, sublime-syntax, sublime-build, tmPreferences}]
 indent_style = space
 indent_size = 2
