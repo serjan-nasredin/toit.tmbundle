@@ -1,0 +1,11 @@
+{
+  "name": "Toit",
+  "details": "https://github.com/snxx-lppxx/toit-sublime",
+  "releases": [
+    {
+      "sublime_text": "*",
+      "platforms": ["osx", "linux", "windows"],
+      "tags": true
+    }
+  ]
+}
