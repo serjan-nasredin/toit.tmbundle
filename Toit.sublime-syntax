@@ -1,14 +1,14 @@
 %YAML 1.2
 ---
-# Syntax: http://www.sublimetext.com/docs/syntax.html
+# Syntax: sublimetext.com/docs/syntax.html
 name: Toit
-file_extensions: toit
+file_extensions: [toit]
 scope: source.toit
 extends: Packages/Toit/Toit.sublime-syntax
 
 contexts:
   main:
-    - match: \b([a-z0-9_:]+)\b
+    - match: \b([a-z0-9_]+)\b
       scope: keyword
       push:
         - function
