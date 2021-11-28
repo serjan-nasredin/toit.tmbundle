@@ -1,0 +1,45 @@
+%YAML 1.2
+---
+# Syntax: http://www.sublimetext.com/docs/syntax.html
+name: Toit
+file_extensions: toit
+scope: source.toit
+extends: Packages/Toit/Toit.sublime-syntax
+
+contexts:
+  main:
+    - match: \b([a-z0-9_:]+)\b
+      scope: keyword
+      push:
+        - function
+        - function-name
+        - control
+        - string
+    - match: \b(import|export)\b
+      captures:
+        1: keyword.control.import.include.toit
+    - match: \b(print)\b
+      scope: support.fucntion.toit
+  constants:
+    - match: \b(true|false|null)\b
+    - scope: constant.language.toit
+
+  function:
+    - meta_scope: meta.function
+
+  function-name:
+    - match: '[a-z0-9_]+'
+      scope: variable.function
+    - match: \:
+
+  control:
+    - match: \b(if|else|for|while|do)\b
+      scope: keyword.control.toit
+
+  string:
+    - match: '"'
+    - meta_scope: string.quoted.double.toit
+    - match: \\.
+      scope: constant.character.escape.toit
+    - match: '"'
+      pop: true
