@@ -1,0 +1,17 @@
+==========================================================
+Thank you for installing the syntax highlighting for Toit!
+==========================================================
+
+Please restart editor 
+to finish installation process 
+after PyV8 was downloaded.
+
+============
+Syntax Check
+============
+
+Please read the project main page: <https://github.com/snxx-lppxx/toit-sublime>
+
+---------------------------------
+Follow me on Twitter: @snxx_lppxx
+---------------------------------
