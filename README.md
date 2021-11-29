@@ -5,13 +5,13 @@ You can download using the following commands:
 ```sh
 $ git clone https://github.com/snxx-lppxx/toit-sublime.git
 $ cd toit-sublime
-$ xcopy /y /o /e ".\toit-sublime" "%AppData%\Sublime_Text_3\Packages\User\toit-sublime"
+$ xcopy /y /o /e ".\toit-sublime" "%AppData%\Sublime_Text_3\Packages\Toit"
 ```
 
 You can test the `test-version` of the file:
 
 ```sh
-$ toit run --no-divice ./tests/syntax_test.toit
+$ toit run --no-divice ./test/syntax_test.toit
 ```
 
 ## Licensed Agreement of Author with Recipients
