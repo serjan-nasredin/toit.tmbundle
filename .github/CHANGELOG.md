@@ -2,6 +2,12 @@
 
 This file is a countdown of those changes that occurred during the writing of this project.
 
+#### v0.7.6
+
+- Created [messages.json][5]
+- Created [packages.json][6]
+- Minor changes: .editorconfig and Toit.sublime-syntax
+
 #### v0.5.4
 
 - Created [editor config][2] file
@@ -15,3 +21,5 @@ This file is a countdown of those changes that occurred during the writing of th
 [2]: https://github.com/snxx-lppxx/toit-sublime/blob/master/.editorconfig
 [3]: https://github.com/snxx-lppxx/toit-sublime/blob/master/tests/syntax_test.toit
 [4]: https://github.com/snxx-lppxx/toit-sublime/blob/master/Comments.tmPreferences
+[5]: https://github.com/snxx-lppxx/toit-sublime/blob/develop/messages.json
+[6]: https://github.com/snxx-lppxx/toit-sublime/blob/develop/packages.json
