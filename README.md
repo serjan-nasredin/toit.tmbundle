@@ -3,7 +3,7 @@
 You can download using the following commands:
 
 ```sh
-$ git clone https://github.com/snxx-lppxx/toit-sublime.git
+$ git clone https://github.com/snxx-lppxx/toit-sublime.git -b develop
 $ cd toit-sublime
 $ xcopy /y /o /e ".\toit-sublime" "%AppData%\Sublime_Text_3\Packages\Toit"
 ```
