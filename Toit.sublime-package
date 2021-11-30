@@ -3,8 +3,8 @@
   "details": "https://github.com/snxx-lppxx/toit-sublime",
   "releases": [
     {
-      "sublime_text": "*",
-      "platforms": ["osx", "linux", "windows"],
+      "sublime_text": ">=3092",
+      "platforms": ["windows"],
       "tags": true
     }
   ]

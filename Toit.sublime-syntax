@@ -4,6 +4,7 @@
 name: Toit
 comment: "Toit Syntax: v0.5.4"
 file_extensions: [toit]
+uuid: cbbe31e1-ffa6-4c9b-bcda-e28a9e2fd6a8
 scope: source.toit
 extends: Packages/Toit/Toit.sublime-syntax
 
