@@ -1,1 +1,1 @@
-text eol=lf
+*.toit linguist-language=Toit text=auto eol=lf

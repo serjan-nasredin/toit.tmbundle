@@ -1,12 +1,11 @@
 {
-  "target": "Toit build system",
-  "shell_cmd": ["toit", "run", "--no-divice" "$file"],
-  "working_dir": "${prject_path:${folder:${file_path}}}",
+  "working_dir": "${project_path:${folder:${file_path}}}",
   "selector": "source.toit",
   "file_patterns": "*.toit",
-  "path": "opt/local/bin:$PATH",
-  "windows":
-  {
-    "cmd": ["toit.exe", "run", "--no-divice", "$file"]
-  }
+  "windows": [
+    {
+      "name": "Building on Windows",
+      "cmd": ["toit.exe", "run", "--no-device", "$file"]
+    }
+  ]
 }

@@ -6,8 +6,48 @@ comment: "Toit Syntax: v0.5.4"
 file_extensions: [toit]
 uuid: cbbe31e1-ffa6-4c9b-bcda-e28a9e2fd6a8
 scope: source.toit
-extends: Packages/Toit/Toit.sublime-syntax
+# extends: Packages/Toit/Toit.sublime-syntax
 
 contexts:
   main:
-    
+    - match: \b(if|else|for|while|return)\b
+      scope: keyword.control.toit
+    - match: '"'
+      push: string
+    - match: \b[0-9]+(?x)\b
+      scope: constant.numeric.toit
+    - meta_content_scope: meta.function
+    - match: \b[A-Za-z_0-9]+\b
+      scope: variable.function
+
+  string:
+    - meta_scope: string.quoted.double.toit
+    - match: \\.
+      scope: constant.character.escape.toit
+    - match: '"'
+      pop: true
+
+  function:
+    - meta_content_scope: meta.function
+    - match: \b[A-Za-z_0-9]+\b
+      set:
+        - match: \b:\b
+      scope: variable.function
+      pop: true
+    - include: main
+
+  class:
+    - match: \bclass\b
+      scope: keyword.control.toit
+      set: class-name
+    - include: main
+
+  class-name:
+    - match: \b[A-Za-z_0-9]*\b
+      scope: entity.name.type
+      pop: true
+
+  value:
+    - match: \b(null)\b
+      scope: constant.numeric.toit
+    - include: main
