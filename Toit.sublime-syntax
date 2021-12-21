@@ -17,29 +17,50 @@ variables:
 
 contexts:
   main:
+    - include: comment-single-line
+    - include: comment-multi-line
     - include: string-double
+    - include: class
     - include: operator
     - include: method
     - include: numbers
     - include: keyword
     - include: punctuation
-    - include: class
-    - include: comment-single-line
-    - include: comment-multi-line
     - include: import
     - include: export
     - include: const
     - include: as-show
     - include: function
 
+  comment-single-line:
+    - match: //
+      scope: punctuation.definition.comment.toit
+      push:
+        - meta_scope: comment.line.toit
+        - match: $\n?
+          pop: true
+
+  comment-multi-line:
+    - match: /\*
+      scope: punctuation.definition.comment.begin.toit
+      push:
+        - meta_scope: comment.block.toit
+        - match: \*/
+          scope: punctuation.definition.comment.end.toit
+          pop: true
+        - match: ^\s*(\*)(?!/)
+          captures:
+            1: punctuation.definition.comment.toit
+
   import:
-    - match: '^\s*(import)\s+([a-z_0-9]+)(?:\s(as|show))(?:\s(w+))$'
+    - match: '^\s*(import)\s+([a-z_0-9]+)(?:\s+(as|show))(?:\s+((\*)|w+))$'
       captures:
         0: meta.import.toit
         1: keyword
         2: entity.name.import.toit
         3: keyword
         4: entity.name.import.toit
+        5: constant.toit
 
   export:
     - match: '^\s*(export)\s+(.*?)$'
@@ -109,12 +130,6 @@ contexts:
     - match: '(abstract|class|extends|interface)'
       scope: keyword.toit
 
-  method:
-    - match: '([a-zA-Z_0-9]+)(?:\s*([a-zA-Z_0-9]+|))?:'
-      captures:
-        1: entity.name.function.toit
-        2: variable.toit
-
   class:
     - match: '^(?:(abstract|))\s*(class)\s+([A-Za-z]{1,}):$\n?'
       captures:
@@ -122,6 +137,13 @@ contexts:
         1: keyword
         2: keyword.declaration.class.toit
         3: support.class.toit
+
+  method:
+    - match: '([a-zA-Z_0-9]+)(?:\s*([a-zA-Z_0-9]+|))?:'
+      captures:
+        1: entity.name.function.toit
+        2: variable.toit
+
 
   function:
     - match: '(print|join|sqrt)'
@@ -147,23 +169,3 @@ contexts:
       scope: constant.numeric.hex.toit
     - match: \b(?:[-]?)(?:[0-9]+)
       scope: constant.numeric.integer.decimal.toit
-
-  comment-single-line:
-    - match: //
-      scope: punctuation.definition.comment.toit
-      push:
-        - meta_scope: comment.line.toit
-        - match: '$\n?'
-          pop: true
-
-  comment-multi-line:
-    - match: /\*
-      scope: punctuation.definition.comment.begin.toit
-      push:
-        - meta_scope: comment.block.toit
-        - match: \*/
-          scope: punctuation.definition.comment.end.toit
-          pop: true
-        - match: ^\s*(\*)(?!/)
-          captures:
-            1: punctuation.definition.comment.toit
