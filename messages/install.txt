@@ -1,17 +1,22 @@
-==========================================================
-Thank you for installing the syntax highlighting for Toit!
-==========================================================
+Thank you for installing the syntax highlighting for Toit
+=========================================================
 
-Please restart editor 
-to finish installation process 
-after PyV8 was downloaded.
+  Please restart editor 
+  to finish installation process 
+  after PyV8 was downloaded.
 
-============
-Syntax Check
-============
 
-Please read the project main page: <https://github.com/snxx-lppxx/toit-sublime#readme>
+Sublime Text 3: Toit syntax highlighter
+---------------------------------------
 
----------------------------------
-Follow me on Twitter: @snxx_lppxx
----------------------------------
+  # Toit
+
+  Please read the project main page: <https://github.com/snxx-lppxx/toit-sublime#readme>
+  Follow me on Twitter: @snxx_lppxx
+
+  ## Build system: Toit builder
+
+  **Package Builder:**
+
+  * Windows, Linux: (CTRL + B)
+  * Mac OS: (⌘ + B)

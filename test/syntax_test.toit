@@ -1,20 +1,29 @@
+import math show PI
+
+export *
+
+abstract class MegaGreeter:
+  names := []
+
+  constructor name="World":
+    names.add name
+
+  say_hi:
+    // Greet everyone individually!
+    names.do: print "Hello $it!"
+  say_bye a:
+  	x := 1
+    everyone := names.join ", "
+    print "Bye $everyone, come back soon."
+    return 1
+
 main:
-	print "Toit Syntax Version: v1.0.0"
-	print "[23.11.2021]"
-	print "GitHub: snxx-lppxx / toit-sublime"
+  greeter := MegaGreeter
+  greeter.say_hi
+  greeter.say_bye
 
-fab:
-	print "a"
-
-	/*
-	* dfsfsdfsdfsfsdfsdf
-	*/
-
-dfdsfsdfsfsdf:
-	print "dfsdfsfsd"
-	if n == 0:
-		print
-
-00000000000000000000000000000000000000000000000000000000000 000000000000000 0000000000 00000 0x000000 null
-
-class zfsdfsdfsdfFSDF:
+  greeter.names.add "Lars"
+  greeter.names.add "Kasper"
+  greeter.names.add "Rikke"
+  greeter.say_hi
+  greeter.say_bye
