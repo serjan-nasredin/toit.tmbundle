@@ -1,8 +1,4 @@
-import math show PI
-
-export *
-
-abstract class MegaGreeter:
+class MegaGreeter:
   names := []
 
   constructor name="World":
@@ -11,11 +7,9 @@ abstract class MegaGreeter:
   say_hi:
     // Greet everyone individually!
     names.do: print "Hello $it!"
-  say_bye a:
-  	x := 1
+  say_bye:
     everyone := names.join ", "
     print "Bye $everyone, come back soon."
-    return 1
 
 main:
   greeter := MegaGreeter
