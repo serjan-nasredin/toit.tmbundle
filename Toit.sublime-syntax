@@ -11,7 +11,6 @@ extends: Packages/Toit/Toit.sublime-syntax
 
 variables:
   before_tag: '(class)'
-  coroutine_keywords: co_(return)
   control_keywords: 'if|else|for|while|do'
   non_func_keywords: 'if|else|for|while|do'
 
@@ -33,7 +32,6 @@ contexts:
     - include: export
     - include: as-show
     - include: function
-    - include: flag
     - include: run-comment
 
   comment-single-line:
@@ -55,17 +53,25 @@ contexts:
         - match: ^\s*(\*)(?!/)
           captures:
             1: punctuation.definition.comment.toit
+    - include: comment-error
+
+  comment-error:
+    - match: '(\*/)'
+      scope: invalid.illegal.toit
 
   run-comment:
     - match: '^#!'
       scope: punctuation.definition.comment.toit
       push:
         - meta_scope: comment.line.toit
-        - match: '(?:.*[\/ ])?toit(?:\.?vm)?$'
+        - match: '(?:.*[\/ ])?(toit(?:\.?vm)?)$'
+          captures:
+            0: comment.block.toit
+            1: constant.toit
+        - match: $\n?
           pop: true
-        - include: char
 
-  string-double:
+  string-single:
     - match: \'
       scope: punctuation.definition.string.begin.toit
       push:
@@ -75,10 +81,9 @@ contexts:
         - match: \'
           scope: punctuation.definition.string.end.toit
           pop: true
-        - include: char
-        - include: var
+    - include: char
 
-  string-single:
+  string-double:
     - match: '"'
       scope: punctuation.definition.string.begin.toit
       push:
@@ -88,8 +93,7 @@ contexts:
         - match: '"'
           scope: punctuation.definition.string.end.toit
           pop: true
-        - include: char
-        - include: var
+    - include: char
 
   operator:
     - match: '([+*/%-:&|^]|<<|>>>?)='
@@ -122,6 +126,10 @@ contexts:
       scope: constant.numeric.hex.toit
     - match: \b(?:[-]?)(?:[0-9]+)
       scope: constant.numeric.integer.decimal.toit
+    - match: '\[(?:\d{1,})(\.{2})(?:\d{1,})\]'
+      captures:
+        0: meta.number.integer.toit
+        1: constant.toit
 
   keyword:
     - match: \b(int|float|string|bool)\b
@@ -154,13 +162,14 @@ contexts:
         5: support.class.toit
 
   method:
-    - match: '(^\s*[a-zA-Z_0-9]{1,})(\s*[a-zA-Z_0-9]|):'
+    - match: '(^\s*[a-zA-Z_0-9]{1,}):' # 2: (\s*[a-zA-Z_0-9]{1,}|)
       captures:
         1: entity.name.function.toit
-        2: variable.toit
+        # 2: variable.toit
+    - include: var
 
   interface:
-    - match: '^(interface)\s+([A-Za-z0-9]{1,})(?:\s*(extends|))(?:\s([A-Za-z0-9]{1,}))(?:\s(implements|))(?:\s+([A-Za-z0-9]{1,}|)):'
+    - match: '^(interface)\s+([A-Za-z0-9]{1,})(?:\s*(extends))(?:\s([A-Za-z0-9]{1,}))(?:\s(implements))(?:\s+([A-Za-z0-9]{1,})):'
       captures:
         0: meta.interface.toit
         1: keyword
@@ -196,24 +205,24 @@ contexts:
       scope: keyword.toit
 
   const:
-    - match: '([A-Z_0-9]{2,})'
+    - match: '([A-Z0-9]{1,}(?:\_)(?:[A-Z_0-9]{2,}))'
       captures:
         0: variable.other.constant.toit
 
   char:
     - match: \b(\\0|\\a|\\b|\\f|\\n|\\r|\\t|\\v|\\\$|\\"|\\\'|\\\\)\b
-      scope: constant.toit
+      scope: string.quoted.double.toit
     - match: \b(\%(?:\.|)[0-9a-f]{1,})\b
       scope: constant.toit
-    - match: '(\$?\(.*?\))'
-      scope: constant.toit
-    - match: 'toit'
-      scope: constant.toit
-
-  flag:
-    - match: '\-\-\w+'
-      scope: constant.toit
+    - match: '(\$)((?:\()(\\.)(?:\)))'
+      captures:
+        0: meta.tag.toit
+        1: constant.toit
+        2: meta.toit
 
   var:
-    - match: \b(\$(?:\(|)(.*)(?:\)|))\b
-      scope: constant.toit
+    - match: '(?:\-{2}|)(\w+)(?:\=|\/)'
+      captures:
+        0: meta.toit
+        1: variable.toit
+    - include: punctuation
