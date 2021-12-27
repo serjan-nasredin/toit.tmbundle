@@ -2,7 +2,7 @@
 ---
 # Syntax: sublimetext.com/docs/syntax.html
 name: Toit
-comment: "Toit Syntax: v1.0.5"
+comment: "Toit Syntax: v1.1.0"
 file_extensions: [toit]
 file_line_match: ^#!(?:.*[\/ ])?toit(?:\.?vm)?$
 uuid: cbbe31e1-ffa6-4c9b-bcda-e28a9e2fd6a8
