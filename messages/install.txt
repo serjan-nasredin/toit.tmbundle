@@ -9,14 +9,9 @@ Thank you for installing the syntax highlighting for Toit
 Sublime Text 3: Toit syntax highlighter
 ---------------------------------------
 
-  # Toit
+  # Toit Programming Language
 
-  Please read the project main page: <https://github.com/snxx-lppxx/toit-sublime#readme>
+  
+
+  Please read the project main page: <https://github.com/snxx-lppxx/toit-sublime#readme>.
   Follow me on Twitter: @snxx_lppxx
-
-  ## Build system: Toit builder
-
-  **Package Builder:**
-
-  * Windows, Linux: (CTRL + B)
-  * Mac OS: (⌘ + B)
