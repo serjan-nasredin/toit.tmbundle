@@ -1,3 +1,7 @@
 .github/ export-ignore
+screenshots/ export-ignore
+test/ export-ignore
 .editorconfig export-ignore
+.mailmap export-ignore
+.mailmap linguist-language=YAML text=auto eol=lf
 *.toit linguist-language=Toit text=auto eol=lf
