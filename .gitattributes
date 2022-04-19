@@ -2,6 +2,5 @@
 screenshots/ export-ignore
 test/ export-ignore
 .editorconfig export-ignore
-.mailmap export-ignore
-.mailmap linguist-language=YAML text=auto eol=lf
+.mailmap linguist-language=YAML text=auto eol=lf export-ignore
 *.toit linguist-language=Toit text=auto eol=lf
