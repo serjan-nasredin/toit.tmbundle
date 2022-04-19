@@ -4,14 +4,19 @@ root = true
 
 [*]
 charset = utf-8
-indent_style = tab
+indent_style = space
 indent_size = 4
 insert_final_newline = true
 end_of_line = lf
 
-[*.{yml, yaml, json, sublime-syntax, sublime-build, sublime-package, sublime-settings, sublime-menu, sublime-keymap, sublime-commands, tmPreferences, tmLanguage}]
-indent_style = space
+[*/*.{tmLanguage, tmPreferences}]
 indent_size = 2
 
-[*.py]
-indent_style = space
+[**.sublime-syntax]
+indent_size = 2
+
+[test/*.toit]
+indent_size = 2
+
+[.github/**.{yml, yaml}]
+indent_size = 2
