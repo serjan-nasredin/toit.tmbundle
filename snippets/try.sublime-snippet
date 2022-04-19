@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[try:${3/.+/\n\t/}${SELECTION}${3/.+/\n/}finally:]]></content>
+    <tabTrigger>try</tabTrigger>
+    <scope>source.toit - meta.function.parameters - meta.function-call - meta.statement - meta.sequence - meta.set - comment - string</scope>
+    <description>Try/Finally</description>
+</snippet>

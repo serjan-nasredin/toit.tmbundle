@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[for i := 0; i < ${1:10}; i++:${3/.+/\n\t/}]]></content>
+    <tabTrigger>for</tabTrigger>
+    <scope>source.toit - meta.function.parameters - meta.function-call - meta.statement - meta.sequence - meta.set - comment - string</scope>
+    <description>For Loop</description>
+</snippet>

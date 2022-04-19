@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[while ${1:$SELECTION}:]]></content>
+    <tabTrigger>while</tabTrigger>
+    <scope>source.toit - meta.function.parameters - meta.function-call - meta.statement - meta.sequence - meta.set - comment - string</scope>
+    <description>While Loop</description>
+</snippet>
