@@ -1,0 +1,15 @@
+{
+    "scope": "source.toit",
+    "completions": [
+        {
+            "trigger": "for",
+            "contents": "for",
+            "kind": "type"
+        },
+        {
+            "trigger": "import",
+            "contents": "import",
+            "kind": "keyword"
+        }
+    ]
+}
