@@ -2,14 +2,79 @@
     "scope": "source.toit",
     "completions": [
         {
-            "trigger": "for",
-            "contents": "for",
-            "kind": "type"
-        },
-        {
             "trigger": "import",
             "contents": "import",
             "kind": "keyword"
+        },
+        {
+            "trigger": "export",
+            "contents": "export",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "for",
+            "contents": "for",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "while",
+            "contents": "while",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "if",
+            "contents": "if",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "else",
+            "contents": "else",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "int",
+            "contents": "int",
+            "kind": "type"
+        },
+        {
+            "trigger": "float",
+            "contents": "float",
+            "kind": "type"
+        },
+        {
+            "trigger": "bool",
+            "contents": "bool",
+            "kind": "type"
+        },
+        {
+            "trigger": "string",
+            "contents": "string",
+            "kind": "type"
+        },
+        {
+            "trigger": "true",
+            "contents": "true",
+            "kind": ["variable", "c", "Constant"]
+        },
+        {
+            "trigger": "false",
+            "contents": "false",
+            "kind": ["variable", "c", "Constant"]
+        },
+        {
+            "trigger": "null",
+            "contents": "null",
+            "kind": ["variable", "c", "Constant"]
+        },
+        {
+            "trigger": "break",
+            "annotation": "logical",
+            "kind": ["keyword", "k", "Operator"]
+        },
+        {
+            "trigger": "continue",
+            "annotation": "logical",
+            "kind": ["keyword", "c", "Operator"]
         }
     ]
 }
