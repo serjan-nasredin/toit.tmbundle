@@ -1,9 +1,10 @@
 # [Toit programming language][1] syntax highlighting for Sublime Text 3
 
-Syntax definition for `*.toit` files for Sublime Text. The extension <dfn>`*.toit`</dfn> is used for convenient programming under esp32.
+Syntax definition for `*.toit` files for Sublime Text. The extension <dfn style="font-style: normal;">`*.toit`</dfn> is used
+for convenient programming under esp32.
 More information on the [documentation page](https://docs.toit.io/language).
 
-<div align="center">
+<div align="center" style="text-align: center;">
 	<figure>
 		<img type="image/png" src="./screenshots/dark-theme.png" alt="Dark Theme"/>
 		<figcaption>Toit highlight in dark theme</figcaption>
