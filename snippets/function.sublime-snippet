@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[${1:function}:${3/.+/\n\t/}]]></content>
+    <content><![CDATA[${1:function}:]]></content>
     <tabTrigger>:</tabTrigger>
     <scope>source.toit - meta.function.parameters - meta.function-call - meta.statement - meta.mapping - meta.sequence - meta.set - comment - string</scope>
     <description>Function</description>
