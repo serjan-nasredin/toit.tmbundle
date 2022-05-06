@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 # Syntax: sublimetext.com/docs/syntax.html
-# Example: docs.toit.io/language
+# Documentation: docs.toit.io/language
 
 name: Toit
 file_extensions: [toit]
@@ -19,27 +19,28 @@ variables:
   control_keywords: \b(if|else|for|while|constructor|unreachable)\b
   builtin_functions: \b(?x:print|super|any)\b
   builtin_types: \b(?x:int|string|bool|float)\b
-  non_func_keywords: \b(if|else|for|while|constructor|unreachable)\b
+  non_func_keywords: \b(if|else\s+if|else|for|while|constructor|unreachable)\b
 
 contexts:
   main:
+    # - include: comment
     - include: comment-single-line
     - include: comment-multi-line
     - include: class
     - include: interface
+    # - include: string
     - include: string-double
     - include: string-single
     - include: keyword
     - include: number
-    - include: bool
-    - include: nan
+    - include: literal
     - include: operator
     - include: constant
     - include: method
     - include: punctuation
     - include: import
     - include: export
-    - include: function
+    - include: built-in
     - include: shebang
 
   comment-single-line:
@@ -66,6 +67,22 @@ contexts:
   comment-error:
     - match: '(\*/)'
       scope: invalid.illegal.toit
+
+  # method-argument:
+    # match: '([a-z]+([A-Z_0-9]+)+)'
+    # scope: variable.parameter.toit
+
+  # method-name:
+    # match: '([a-z]+([A-Z_0-9]+)+)'
+    # scope: entity.name.function.toit
+
+  # class-name:
+    # match: '([A-Z]+([a-z_0-9]+)+)'
+    # scope: keyword
+
+  # extend:
+    # match: \bextends\b
+    # scope: keyword
 
   shebang:
     - match: '^\#!'
@@ -141,18 +158,28 @@ contexts:
     - match: \b(?:[-]?)(?:[0-9]+)
       scope: constant.numeric.integer.decimal.toit
 
-  bool:
+  literal:
     - match: \b(true|false)\b
       scope: constant.language.boolean.toit
-
-  nan:
     - match: \b(null|none)\b
       scope: constant.language.nan.toit
 
-  keyword:
+  type:
     - match: \b(int|float|string|bool)\b
       scope: storage.type.toit
-    - match: \b(break|continue|unreachable)\b
+
+  logical:
+    - match: \b(break|continue)\b
+      scope: keyword.control.toit
+
+  built-in:
+    - match: \b(print|join|super)\b
+      scope: support.function.toit
+
+  keyword:
+    - include: type
+    - include: logical
+    - match: \b(unreachable)\b
       scope: keyword.control.toit
     - match: \b(for|while|return)\b
       scope: keyword.control.toit
@@ -194,10 +221,6 @@ contexts:
         4: support.class.toit
         5: keyword
         6: support.class.toit
-
-  function:
-    - match: \b(print|join|sqrt)\b
-      scope: support.function.toit
 
   import:
     - match: '^\s*(import)\s+([a-z_0-9]+)(?:\s+(as|show))(?:\s+((\*)|w+))$'
