@@ -20,3 +20,6 @@ indent_size = 2
 
 [.github/**.{yml, yaml}]
 indent_size = 2
+
+[message/*.txt]
+indent_size = 2
