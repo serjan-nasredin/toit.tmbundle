@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[${1:method}:]]></content>
+    <tabTrigger>:</tabTrigger>
+    <scope>source.toit - meta.function.parameters - meta.function-call - meta.statement - meta.mapping - meta.sequence - meta.set - comment - string</scope>
+    <description>Method</description>
+</snippet>
