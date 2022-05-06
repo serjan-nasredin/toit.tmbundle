@@ -1,0 +1,32 @@
+%YAML 1.2
+---
+# RELEASE FILE FOR CHANGELOG
+#
+# :description "Sublime Text package for Toit (https://toitlang.org/)."
+# :url "https://github.com/snxx-lppxx/toit-sublime"
+# :license "GNU GPL v3.0"
+
+release:
+  "1.2.1": |
+    [update] method.snippet
+    [update] .gitattributes and .editorconfig
+    [add] example package.{yaml|lock} file
+    minor
+  "1.2.0": |
+    [remove] packages.json
+    [add] completions and snippet
+    [add] .mailmap file
+    [add] sublime settings file
+    minor edits
+    edit readme
+  # ...
+  "0.7.6": |
+    [add] messages.json, packages.json
+    minor edits
+  "0.5.4": |
+    [add] editor config file
+    [add] .gitignore, .gitattributes
+    minor edits
+    comments
+    [add] syntax_test.toit
+    [add] python settings
