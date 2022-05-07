@@ -1,4 +1,4 @@
-# [Toit Programming Language][1] plugin for Sublime Text 3
+# Sublime Text 3 plugin for [Toit Programming Language][1]
 
 Syntax definition for `*.toit` files for Sublime Text. The extension `*.toit` is used for convenient programming under esp32.
 More information on the [documentation page](https://docs.toit.io/language).
